@@ -1,0 +1,35 @@
+1. Two services 
+	a)guestbook-frontend (uses thymleaf)
+	b)guesbook-service (middletyre)
+
+2. Both application has 2 profiles 
+	a)default -uses hsql db
+	b)cloud	-uses Cloud SQL 
+
+3. Application tracing done using Spring Cloud Sleuth and GCP's Cloud Tracer
+
+4. Used GCP's Pub/Sub as a MQ and Spring Integration as a Interface to communicate
+	with the MQ.
+
+5. Used GCP Cloud Storage and Spring Cloud GCP starter storage to upload and 
+	retrieve Images.
+
+6. Implemented GCP Cloud Vision with Spring Cloud GCP starter vision and
+	com.google.cloud.vision get the metadata of the uploaded image
+	which can be used for Filtering content or Advertisement purpose.
+
+7. Deployed the application to GCP's App Engine (like Elastic Bean Stalk) 
+	with the help of a yaml file, which provides auto-scaling and is PAAS.
+	So two services deployed to two separate App Engines, and used 
+	Cloud Runtime Configuration, so that frontend app automatically knows which is
+	the backend service it needs to communicates to.
+
+8. Cloud Spanner is a distributed strongly consistent database. Designed to mix 
+	consistency of RRDBMS and Distibuted Scalable nature of NoSQl databases.
+	It also has industry leading 99.999% of availability, no planned downtime
+	and industry graded security.
+
+9. Used Spring Cloud GCP Starter Data Spanner to interact with Cloud Spanner
+
+10. Containerized the application to Google Container Registry and deployed to GKE 
+	with a Load Balancer service before the front end app.
